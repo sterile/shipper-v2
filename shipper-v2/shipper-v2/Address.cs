@@ -44,8 +44,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     throw new ArgumentOutOfRangeException(nameof(Name), value, $"{nameof(Name)} is a required field.");
-                else
-                    _name = value.Trim();
+                
+                _name = value.Trim();
             }
         }
         public string Address1
@@ -55,8 +55,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     throw new ArgumentOutOfRangeException(nameof(Address1), value, $"{nameof(Address1)} is a required field.");
-                else
-                    _addressLine1 = value.Trim();
+                
+                _addressLine1 = value.Trim();
             }
         }
 
@@ -67,8 +67,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     _addressLine2 = "";
-                else
-                    _addressLine2 = value.Trim();
+                
+                _addressLine2 = value.Trim();
             }
         }
 
@@ -79,8 +79,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     throw new ArgumentOutOfRangeException(nameof(City), value, $"{nameof(City)} is a required field.");
-                else
-                    _city = value.Trim();
+                
+                _city = value.Trim();
             }
         }
 
@@ -91,8 +91,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     throw new ArgumentOutOfRangeException(nameof(State), value, $"{nameof(State)} is a required field.");
-                else
-                    _state = value.Trim();
+                
+                _state = value.Trim();
             }
         }
 
@@ -103,8 +103,8 @@ namespace shipper_v2
             {
                 if (MIN_ZIP > value || MAX_ZIP < value)
                     throw new ArgumentOutOfRangeException(nameof(Zip), value, $"{nameof(Zip)} must be between {MIN_ZIP:D5} and {MAX_ZIP:D5}.");
-                else
-                    _zip = value;
+                
+                _zip = value;
             }
         }
 
