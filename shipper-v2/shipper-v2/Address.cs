@@ -31,6 +31,7 @@ namespace shipper_v2
         {
             Name = name;
             Address1 = adr1;
+            Address2 = "";
             City = city;
             State = state;
             Zip = zip;
@@ -42,9 +43,9 @@ namespace shipper_v2
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
-                    throw new ArgumentOutOfRangeException("Name", "Name is a required field.");
+                    throw new ArgumentOutOfRangeException(nameof(Name), value, $"{nameof(Name)} is a required field.");
                 else
-                    _name = value;
+                    _name = value.Trim();
             }
         }
         public string Address1
@@ -53,16 +54,22 @@ namespace shipper_v2
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
-                    throw new ArgumentOutOfRangeException("Address line 1", "Address line 1 is a required field.");
+                    throw new ArgumentOutOfRangeException(nameof(Address1), value, $"{nameof(Address1)} is a required field.");
                 else
-                    _addressLine1 = value;
+                    _addressLine1 = value.Trim();
             }
         }
 
         public string Address2
         {
             get => _addressLine2;
-            set => _addressLine2 = value;
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                    _addressLine2 = "";
+                else
+                    _addressLine2 = value.Trim();
+            }
         }
 
         public string City
@@ -71,9 +78,9 @@ namespace shipper_v2
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
-                    throw new ArgumentOutOfRangeException("City", "City is a required field.");
+                    throw new ArgumentOutOfRangeException(nameof(City), value, $"{nameof(City)} is a required field.");
                 else
-                    _city = value;
+                    _city = value.Trim();
             }
         }
 
@@ -83,9 +90,9 @@ namespace shipper_v2
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
-                    throw new ArgumentOutOfRangeException("State", "State is a required field.");
+                    throw new ArgumentOutOfRangeException(nameof(State), value, $"{nameof(State)} is a required field.");
                 else
-                    _state = value;
+                    _state = value.Trim();
             }
         }
 
@@ -95,7 +102,7 @@ namespace shipper_v2
             set
             {
                 if (MIN_ZIP > value || MAX_ZIP < value)
-                    throw new ArgumentOutOfRangeException("Zip code", $"Zip code must be between {MIN_ZIP:D5} and {MAX_ZIP:D5}.");
+                    throw new ArgumentOutOfRangeException(nameof(Zip), value, $"{nameof(Zip)} must be between {MIN_ZIP:D5} and {MAX_ZIP:D5}.");
                 else
                     _zip = value;
             }
