@@ -38,17 +38,17 @@ namespace shipper_v2
             string[][] validationList = new string[][]
             {
                 // Name validation check
-                new string[] { "    ", "727 Limer Street", "Rome", "GA", "30165"},
+                new string[] {"    ", "727 Limer Street", "Rome", "GA", "30165"},
                 // Address line 1 check
-                new string[] { "Frances G. Ott", "", "Irving", "TX", "75060"},
+                new string[] {"Frances G. Ott", "", "Irving", "TX", "75060"},
                 // City check
-                new string[] { "Angela W. Morin", "1741 Alpha Avenue", null, "TX", "75433"},
+                new string[] {"Angela W. Morin", "1741 Alpha Avenue", null, "TX", "75433"},
                 // State check
-                new string[] { "Madeline L. Nault", "1059 James Avenue", "Wichita", null, "67213"},
+                new string[] {"Madeline L. Nault", "1059 James Avenue", "Wichita", null, "67213"},
                 // Zip over check
-                new string[] { "Steven C. Ek", "2642 Red Maple Drive", "Bellflower", "CA", "907066"},
+                new string[] {"Steven C. Ek", "2642 Red Maple Drive", "Bellflower", "CA", "907066"},
                 // Zip under check
-                new string[] { "Carl B. Zepeda", "3733 Conference Center Way", "Washington", "VA", "-1"}
+                new string[] {"Carl B. Zepeda", "3733 Conference Center Way", "Washington", "VA", "-1"}
             };
 
             foreach(string[] testData in validationList)
