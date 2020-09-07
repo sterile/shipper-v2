@@ -64,8 +64,8 @@ namespace shipper_v2
             {
                 if (String.IsNullOrWhiteSpace(value))
                     _addressLine2 = "";
-                
-                _addressLine2 = value.Trim();
+                else
+                    _addressLine2 = value.Trim();
             }
         }
 
