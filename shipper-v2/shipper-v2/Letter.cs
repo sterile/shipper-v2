@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace shipper_v2
 {
@@ -26,8 +24,5 @@ namespace shipper_v2
             }
         }
         public override decimal CalcCost() => Cost;
-
-        public override string ToString() => base.ToString() +
-            $"{Environment.NewLine}{Environment.NewLine}COST: {CalcCost():C}";
     }
 }
