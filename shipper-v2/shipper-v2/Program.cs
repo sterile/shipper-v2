@@ -16,7 +16,7 @@ namespace shipper_v2
             Address home1 = new Address("Helen C. Bice", "1163 Thompson Drive", "El Sobrante", "CA", 94803);
             Address home2 = new Address("Teresa T. Johnson", "3542 Farland Street", "Apt 101", "Westborough", "MA", 01581);
             Address home3 = new Address("Troy H. Thomas", "1299 Saints Alley", "Plant City", "FL", 33564);
-            Address home4 = new Address("Susan K. McCrady", "3118 Chenoweth Drive", null, "Clarksville", "TN", 37040);
+            Address home4 = new Address("Susan K. McCrady", "3118 Chenoweth Drive", "Apt B3", "Clarksville", "TN", 37040);
 
             List<Parcel> letters = new List<Parcel>
             {
@@ -31,22 +31,32 @@ namespace shipper_v2
 
             // Validation testing
 
-            try
+            string[][] validationList = new string[][]
             {
-                List<Address> validationTesting = new List<Address>
+                // Name validation check
+                new string[] { "    ", "727 Limer Street", "Rome", "GA", "30165"},
+                // Address line 1 check
+                new string[] { "Frances G. Ott", "", "Irving", "TX", "75060"},
+                // City check
+                new string[] { "Angela W. Morin", "1741 Alpha Avenue", null, "TX", "75433"},
+                // State check
+                new string[] { "Madeline L. Nault", "1059 James Avenue", "Wichita", null, "67213"},
+                // Zip over check
+                new string[] { "Steven C. Ek", "2642 Red Maple Drive", "Bellflower", "CA", "907066"},
+                // Zip under check
+                new string[] { "Carl B. Zepeda", "3733 Conference Center Way", "Washington", "VA", "-1"}
+            };
+
+            foreach(string[] testData in validationList)
+            {
+                try
                 {
-                    new Address("    ", "727 Limer Street", "Rome", "GA", 30165),
-                    new Address("Frances G. Ott", "", "Irving", "TX", 75060),
-                    new Address("Angela W. Morin", "1741 Alpha Avenue", null, "TX", 75433),
-                    new Address("Madeline L. Nault", "1059 James Avenue", "Wichita", "   ", 67213),
-                    new Address("Tracy D. Kinney", "2576 Birch Street", "  ", "Indianapolis", "IN", 46229),
-                    new Address("Steven C. Ek", "2642 Red Maple Drive", "Bellflower", "CA", 907066),
-                    new Address("Carl B. Zepeda", "3733 Conference Center Way", "Washington", "VA", -1)
-                };
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.WriteLine($"Task failed successfully: {e.Message}");
+                    Address test = new Address(testData[0], testData[1], testData[2], testData[3], Int32.Parse(testData[4]));
+                }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    Console.WriteLine($"{Environment.NewLine}Task failed successfully: {e.Message}");
+                }
             }
         }
     }
