@@ -119,7 +119,7 @@ namespace shipper_v2
                     $"{Address2}{Environment.NewLine}";
 
             return $"{Name}{Environment.NewLine}{address}" +
-                $"{City}, {State} {Zip}";
+                $"{City}, {State} {Zip:D5}";
         }
     }
 }
