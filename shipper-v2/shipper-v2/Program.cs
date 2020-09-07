@@ -1,7 +1,9 @@
 ﻿/*
- * Grading ID: 
- * Description: TBD
- * Variable Dictionary:
+ * Grading ID: E3780
+ * Program: 0
+ * Due Date: September 7 2020
+ * Course: CIS 200-76
+ * Description: Includes sample data to test the Address, Letter, and Parcel classes.
  */
 
 using System;
@@ -13,6 +15,7 @@ namespace shipper_v2
     {
         private static void Main()
         {
+            // List of sample addresses
             List<Address> homes = new List<Address>
             {
                 new Address("Helen C. Bice", "1163 Thompson Drive", "El Sobrante", "CA", 94803),
@@ -21,7 +24,7 @@ namespace shipper_v2
                 new Address("Susan K. McCrady", "3118 Chenoweth Drive", "Apt B3", "Clarksville", "TN", 37040)
             };
            
-
+            // List of sample letters using addresses
             List<Parcel> letters = new List<Parcel>
             {
                 new Letter(homes[0], homes[1], 0.43M),
@@ -45,9 +48,9 @@ namespace shipper_v2
                 new string[] {"Angela W. Morin", "1741 Alpha Avenue", null, "TX", "75433"},
                 // State check
                 new string[] {"Madeline L. Nault", "1059 James Avenue", "Wichita", null, "67213"},
-                // Zip over check
+                // Zip over limit check
                 new string[] {"Steven C. Ek", "2642 Red Maple Drive", "Bellflower", "CA", "907066"},
-                // Zip under check
+                // Zip under limit check
                 new string[] {"Carl B. Zepeda", "3733 Conference Center Way", "Washington", "VA", "-1"}
             };
 
