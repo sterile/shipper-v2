@@ -18,16 +18,16 @@ namespace shipper_v2
             Address home3 = new Address("Troy H. Thomas", "1299 Saints Alley", "Plant City", "FL", 33564);
             Address home4 = new Address("Susan K. McCrady", "3118 Chenoweth Drive", "Apt B4", "Clarksville", "TN", 37040);
 
-            var letters = new List<Parcel>();
-            letters.Add(new Letter(home1, home2, 0.43M));
-            letters.Add(new Letter(home2, home3, 0.39M));
-            letters.Add(new Letter(home4, home1, 0.47M));
-            letters.Add(new Letter(home2, home4, 1.23M));
+            List<Parcel> letters = new List<Parcel>
+            {
+                new Letter(home1, home2, 0.43M),
+                new Letter(home2, home3, 0.39M),
+                new Letter(home4, home1, 0.47M),
+                new Letter(home2, home4, 1.23M)
+            };
 
             foreach (Letter letter in letters)
-            {
                 Console.WriteLine(letter.ToString());
-            }
         }
     }
 }
