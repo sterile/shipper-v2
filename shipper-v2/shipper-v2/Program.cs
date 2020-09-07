@@ -13,17 +13,21 @@ namespace shipper_v2
     {
         private static void Main()
         {
-            Address home1 = new Address("Helen C. Bice", "1163 Thompson Drive", "El Sobrante", "CA", 94803);
-            Address home2 = new Address("Teresa T. Johnson", "3542 Farland Street", "Apt 101", "Westborough", "MA", 01581);
-            Address home3 = new Address("Troy H. Thomas", "1299 Saints Alley", "Plant City", "FL", 33564);
-            Address home4 = new Address("Susan K. McCrady", "3118 Chenoweth Drive", "Apt B3", "Clarksville", "TN", 37040);
+            List<Address> homes = new List<Address>
+            {
+                new Address("Helen C. Bice", "1163 Thompson Drive", "El Sobrante", "CA", 94803),
+                new Address("Teresa T. Johnson", "3542 Farland Street", "Apt 101", "Westborough", "MA", 01581),
+                new Address("Troy H. Thomas", "1299 Saints Alley", "Plant City", "FL", 33564),
+                new Address("Susan K. McCrady", "3118 Chenoweth Drive", "Apt B3", "Clarksville", "TN", 37040)
+            };
+           
 
             List<Parcel> letters = new List<Parcel>
             {
-                new Letter(home1, home2, 0.43M),
-                new Letter(home2, home3, 0.39M),
-                new Letter(home4, home1, 0.47M),
-                new Letter(home2, home4, 1.23M)
+                new Letter(homes[0], homes[1], 0.43M),
+                new Letter(homes[1], homes[2], 0.39M),
+                new Letter(homes[3], homes[0], 0.47M),
+                new Letter(homes[1], homes[3], 1.23M)
             };
 
             foreach (Letter letter in letters)
