@@ -11,7 +11,7 @@ namespace shipper_v2
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Address home1 = new Address("Helen C. Bice", "1163 Thompson Drive", "El Sobrante", "CA", 94803);
             Address home2 = new Address("Teresa T. Johnson", "3542 Farland Street", "Apt 101", "Westborough", "MA", 01581);
