@@ -4,7 +4,7 @@ namespace shipper_v2
 {
     class Letter : Parcel
     {
-        private decimal cost; // Cost of shipment
+        private decimal _cost; // Cost of shipment
 
         public Letter(Address origin, Address destination, decimal cost) : base(origin, destination)
         {
@@ -13,14 +13,14 @@ namespace shipper_v2
 
         private decimal Cost
         {
-            get => cost;
+            get => _cost;
             set
             {
                 if (value <= decimal.Zero)
                     throw new ArgumentOutOfRangeException(nameof(Cost), value,
                         $"{nameof(Cost)} must be greater than {decimal.Zero:C}.");
 
-                cost = value;
+                _cost = value;
             }
         }
         public override decimal CalcCost() => Cost;
