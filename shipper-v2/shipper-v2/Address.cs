@@ -43,15 +43,10 @@ namespace shipper_v2
          * Preconditions: 'name', 'adr1', 'city', 'state', 'zip' must not be null or whitespace.
          * Postcondition: The address object is created using the values provided.
          */
-        public Address(string name, string adr1, string city, string state, int zip)
+        public Address(string name, string adr1, string city, string state, int zip) : this(name, adr1, string.Empty, city, state, zip)
         {
-            // Validate address details using properties
-            Name = name;
-            Address1 = adr1;
-            Address2 = "";
-            City = city;
-            State = state;
-            Zip = zip;
+            // This area is intentionally left blank.
+            // Arguments are passed to the constructor above.
         }
 
         public string Name
@@ -108,7 +103,7 @@ namespace shipper_v2
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
-                    _addressLine2 = "";
+                    _addressLine2 = string.Empty;
                 else
                     _addressLine2 = value.Trim();
             }
